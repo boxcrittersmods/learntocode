@@ -79,22 +79,18 @@ function createBalloon(t, o) {
     return a.graphics.setStrokeStyle(1).beginStroke("#888888").beginFill("#FFFFFF"), a.graphics.moveTo(5, 0).arcTo(r, 0, r, 5, 5).arcTo(r, e, r - 5, e, 5).lineTo(80, e).lineTo(70, e + 10).lineTo(70, e).arcTo(0, e, 0, e - 5, 5).arcTo(0, 0, 5, 0, 5), a.x = 0 - r / 2, a.y = -10, a
 }
 
-function World(r, t, o) {
+function World(t, o) {
     var e = this;
-    this.socket = r, this.artwork = new Artwork(t), this.room = void 0, this.events = new Events(r, e, void 0), this.stage = new createjs.Stage(o), this.stage.on("stagemousedown", function(t) {
-        var o = Math.floor(t.stageX),
-            e = Math.floor(t.stageY);
-        r.emit("click", {
-            x: o,
-            y: e
-        })
-    }), createjs.Ticker.framerate = 60, createjs.Ticker.on("tick", function(t) {
+    this.artwork = new Artwork(t), this.room = void 0;
+    /*this.events = new Events(r, e, void 0)*/
+    this.stage = new createjs.Stage(o), createjs.Ticker.framerate = 60, createjs.Ticker.on("tick", function(t) {
         e.stage.update(t)
-    }), void 0 !== r && this.socketHandler(r)
+    });
 }
 Room.prototype.sortDepth = function() {
     this.game.children.sort(sortDepth)
 }, Room.prototype.addPlayer = function(t) {
+    console.info("A", t)
     var o = t.i;
     if (null == this.playerlist[o]) {
         var e = new Player;
@@ -109,6 +105,7 @@ Room.prototype.sortDepth = function() {
         n.textAlign = "center", n.lineWidth = 100, n.y = 15, i.addChild(n), e.nickname = i, this.nicknames.addChild(i), this.stage.update(), this.playerlist[o] = e
     }
 }, Room.prototype.addBalloon = function(t) {
+    console.info("M", t)
     var o = this.playerlist[t.i],
         e = new createjs.Container,
         r = new createjs.Text(t.m, "12px Arial", "#000000");
@@ -124,10 +121,12 @@ Room.prototype.sortDepth = function() {
         o.balloon.removeChild(e), n.stage.update()
     }, 5e3), this.stage.update()
 }, Room.prototype.removePlayer = function(t) {
+    console.info("R", t)
     console.log("removePlayer", t), console.log(this.playerlist);
     var o = this.playerlist[t.i];
     this.game.removeChild(o), this.balloons.removeChild(o.balloon), this.nicknames.removeChild(o.nickname), delete this.playerlist[t.i], this.stage.update(), console.log(this.playerlist)
 }, Room.prototype.movePlayer = function(t) {
+    console.info("P", t)
     var o = this.playerlist[t.i];
     o.isMoving = !0;
     var e = findDirection(t.r);
@@ -145,34 +144,16 @@ Room.prototype.sortDepth = function() {
     }), this.stage.update()
 }, World.prototype.setStage = function(t) {
     this.stage = new createjs.Stage(t)
-}, World.prototype.socketHandler = function(o) {
-    var e = this;
-    o.on("connect", function() {}), o.on("disconnect", function() {
-        console.log("DISCONNECT")
-    }), o.on("login", function(t) {
-        console.log("login", t), o.emit("joinRoom", {
-            roomId: "tavern"
-        })
-    }), o.on("joinRoom", function(t) {
-        console.log("joinRoom", t), e.createRoom(t, !1)
-    }), o.on("A", function(t) {
-        console.info("A", t), e.room.addPlayer(t)
-    }), o.on("R", function(t) {
-        console.info("R", t), e.room.removePlayer(t)
-    }), o.on("P", function(t) {
-        console.info("P", t), e.room.movePlayer(t)
-    }), o.on("M", function(t) {
-        console.info("M", t), e.room.addBalloon(t)
-    })
-}, World.prototype.login = function(t) {
-    console.log("login", t), this.socket.open(), this.socket.emit("login", {
-		username: t,
-        ticket: 'KJ82IqhwIu28'
-    })
-}, World.prototype.sendMessage = function(t) {
-    console.log("sendMessage", t), this.socket.emit("sendMessage", {
-        message: t
-    })
-}, World.prototype.createRoom = function(t) {
+}, 
+/*
+Sockets
+    joinRoom:world.createRoom
+    a:addPlayer
+    r:removePlayer
+    p:movePlayer
+    m:addBalloon
+    */
+World.prototype.createRoom = function(t) {
+    console.log("joinRoom", t)
     console.log("createRoom", t), this.room = new Room(this.stage, this.artwork, t, !1)
 };

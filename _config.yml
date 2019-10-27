@@ -1,11 +1,23 @@
 # This is a Jekyll configoration file for Github Pages
 
-title: BoxCritters Private Box
-url: https://boxcritters.github.io/private-box
+title: Project:LearnToCode - Box Critters Modding Community
+url: https://boxcritters.github.io/learntocode
 
 
 permalink: pretty
 production: true
+
+
+
+plugins:
+ - jekyll-feed
+ - jekyll-redirect-from
+ - jekyll-seo-tag
+ - jekyll-sitemap
+ - jekyll-avatar
+ - jemoji
+ - jekyll-mentions
+ - jekyll-include-cache
 
 # Build settings
 markdown: kramdown

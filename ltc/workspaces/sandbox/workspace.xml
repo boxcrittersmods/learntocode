@@ -1,0 +1,9 @@
+<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none">
+  <block type="say" id="bsQ]Fa$CC#pfi-ydMO*a" x="113" y="63">
+    <value name="MESSAGE">
+      <block type="text" id="C2ObXOhXYZp[$we!c![1">
+        <field name="TEXT">Hello World</field>
+      </block>
+    </value>
+  </block>
+</xml>

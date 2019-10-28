@@ -1,0 +1,17 @@
+say
+`BoxCritters.Say(${value_message});\n`
+
+pos
+`{x:${value_x},y:${value_y}}`
+
+goto
+`BoxCritters.Goto(${pos});\n`
+
+player_pos
+`BoxCritters.PlayerPos()`
+
+pos_x
+`${value_pos}.x`
+
+pos_y
+`${value_pos}.y`

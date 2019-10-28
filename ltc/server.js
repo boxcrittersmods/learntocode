@@ -68,11 +68,11 @@ const BoxCritters = (function() {
         });
     }
 
-    function goto(pos) {
-        pos = gridPos(pos);
+    function Goto(pos) {
+        //pos = gridPos(pos);
         gotoCoord(pos);
     }
-    function move(x,y) {
+    function Move(x,y) {
         var moveAmount = gridPos({x,y});
         gotoCoord({
             x:Server.player.x+moveAmount.x,
@@ -80,18 +80,24 @@ const BoxCritters = (function() {
         });
     }
 
-    function say(text) {
+    function Say(text) {
         world.room.addBalloon({
             i:0,
             m:text
         });
     }
 
+    function PlayerPos() {
+        return {
+            x:Server.player.x,
+            y:Server.player.y
+        }
+    }
+
     return {
-        goto,
-        move,
-        say,
-        start,
-        gridPos
+        Goto,
+        Move,
+        Say,
+        PlayerPos
     }
 })();

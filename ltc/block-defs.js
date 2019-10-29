@@ -17,7 +17,7 @@ Blockly.JavaScript['pos'] = function(block) {
 Blockly.JavaScript['goto'] = function(block) {
   var value_pos = Blockly.JavaScript.valueToCode(block, 'POS', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `BoxCritters.Goto(${pos});\n`;
+  var code = `BoxCritters.Goto(${value_pos});\n`;
   return code;
 };
 

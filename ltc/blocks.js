@@ -76,3 +76,17 @@ Blockly.Blocks['pos_y'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['repeat_forver'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("repeat forever");
+    this.appendStatementInput("REPEAT_DO")
+        .setCheck(null)
+        .appendField("do");
+    this.setPreviousStatement(true, null);
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

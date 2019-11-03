@@ -1,6 +1,6 @@
-# Private Box
-Alternative client for Box Critters.
-![screenshot](https://cdn.discordapp.com/attachments/632604108024578059/633333071114141696/unknown.png)
+# Project Learn to code [![Build Status](https://travis-ci.org/boxcritters/learntocode.svg?branch=master)](https://travis-ci.org/boxcritters/learntocode)
+Learn to code with BoxCritters
+![screenshot](https://pbs.twimg.com/media/EH7JvOgX0AEv45m?format=png&name=small)
 # Table of Contents
 TODO: Optionally, include a table of contents in order to allow other people to quickly naviagte especially long or detailed READMEs.
 
@@ -30,18 +30,16 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for (setting guidelines for repository contributors)[https://help.github.com/articles/setting-guidelines-for-repository-contributors/].
 
-## Versionin
+## Versioning
 Say what versioning method you use.
 
 example:
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/USER/REPO/tags).
 
 ## Authors
-* **AuthorName** - *What they do* - [USER](https://github.com/USER)
-* **AuthorName** - *What they do* - [USER](https://github.com/USER)
-* **AuthorName** - *What they do* - [USER](https://github.com/USER)
+* **Tumble1999** - *Moatly all of it* - [tumble1999](https://github.com/tumble1999)
 
-See also the list of [contributors](https://github.com/USER/REPO/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/boxcritters/learntocode/REPO/contributors) who participated in this project.
 
 ## License
 TODO: Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s [licensing guide](http://choosealicense.com/)!

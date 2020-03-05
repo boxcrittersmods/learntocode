@@ -407,4 +407,52 @@
   </category>
   <category name="Variables" colour="#a55b80" custom="VARIABLE"></category>
   <category name="Functions" colour="#995ba5" custom="PROCEDURE"></category>
+  <category name="Function Helpers">
+    <block type="function"></block>
+    <block type="return">
+      <value name="RETURN">
+        <block type="logic_null"></block>
+      </value>
+    </block>
+    <block type="var">
+      <field name="CODE">var</field>
+    </block>
+    <block type="run_return">
+      <value name="FUNCTION">
+        <block type="function"></block>
+      </value>
+    </block>
+    <block type="run">
+      <field name="CODE">run</field>
+      <value name="CODE">
+        <block type="function"></block>
+      </value>
+    </block>
+  </category>
+  <category name="Objects">
+    <block type="object">
+      <statement name="PROPERTIES">
+        <block type="object_property">
+          <field name="KEY">hello</field>
+          <next>
+            <block type="object_property">
+              <field name="KEY">hi</field>
+              <next>
+                <block type="object_property">
+                  <field name="KEY">world</field>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block type="object_property">
+      <field name="KEY">default</field>
+    </block>
+    <block type="get_prop">
+      <field name="PROP">property</field>
+    </block>
+  </category>
+  <sep></sep>
 </xml>

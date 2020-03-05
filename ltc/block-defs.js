@@ -156,7 +156,7 @@ Blockly.JavaScript['object_property'] = function(block) {
 	var text_key = block.getFieldValue('KEY');
 	var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
 	// TODO: Assemble JavaScript into code variable.
-	var code = `"${text_key}":${value_value}`,;
+	var code = `"${text_key}":${value_value},`;
 	return code;
   };
 

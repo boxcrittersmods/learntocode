@@ -88,7 +88,7 @@ Blockly.JavaScript["var"] = function(block) {
     Blockly.JavaScript.ORDER_ATOMIC
   );
   // TODO: Assemble JavaScript into code variable.
-  var code = `${value_code}`;
+  var code = eval(${value_code});
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -164,7 +164,7 @@ Blockly.JavaScript['object_property'] = function(block) {
 	var text_prop = block.getFieldValue('PROP');
 	var value_next = Blockly.JavaScript.valueToCode(block, 'NEXT', Blockly.JavaScript.ORDER_ATOMIC);
 	// TODO: Assemble JavaScript into code variable.
-	var code = `.${text_prop}${value_next}`;
+	var code = `${value_next}.${text_prop}`;
 	// TODO: Change ORDER_NONE to the correct strength.
 	return [code, Blockly.JavaScript.ORDER_NONE];
   };

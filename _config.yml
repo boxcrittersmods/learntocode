@@ -29,7 +29,7 @@ kramdown:
   auto_ids: false
 
 
-excludes:
+exclude:
   - lib
   - Gemfile
   - Gemfile.lock
